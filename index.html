@@ -1849,7 +1849,7 @@ function updateAvatarGrowth() {
   const char = AVATAR_DETAILS[selectedAvatar];
   
   document.getElementById('panelAvatarIcon').innerHTML = `
-    <img src="${char.img}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+    <img src="${char.img}" onerror="if(this.src.includes('avatar/')) this.src = this.src.replace('avatar/', '');" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
     <div class="avatar-level-badge" id="panelAvatarLevel">LV.${stage.lv}</div>
   `;
   
